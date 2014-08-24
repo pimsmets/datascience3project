@@ -3,7 +3,7 @@ Codebook
 
 ##Description of the dataset
 
-The data are the measurements taken by a smartphone accelerometer and gyroscope during a test where 30 subjects performed 6 activities.
+The data are the measurements taken by a smartphone accelerometer and gyroscope during a test where 30 subjects performed 6 activities. These measurements have been normalized in the range [-1, 1].
 
 The raw measurements have already been summarized in 561 variables. Each data row is a summary of measurements during a certain time frame.
 
@@ -14,87 +14,71 @@ The resulting data set thus contains 180 rows (30 subject x 6 activities).
 
 ##Variables
 
-1. Subject : the ID of the test person
-2. Activity : the name of the activity
-
-then follow 79 variables. These are the averages of the observed measurements, normalized between -1 and 1.
-
-3. tBodyAcc-mean()-X
-4. tBodyAcc-mean()-Y
-5. tBodyAcc-mean()-Z
-6. tBodyAcc-std()-X
-7. tBodyAcc-std()-Y
-8. tBodyAcc-std()-Z
-9. tGravityAcc-mean()-X
-10. tGravityAcc-mean()-Y
-11. tGravityAcc-mean()-Z
-12. tGravityAcc-std()-X
-13. tGravityAcc-std()-Y
-14. tGravityAcc-std()-Z
-15. tBodyAccJerk-mean()-X
-16. tBodyAccJerk-mean()-Y
-17. tBodyAccJerk-mean()-Z
-18. tBodyAccJerk-std()-X
-19. tBodyAccJerk-std()-Y
-20. tBodyAccJerk-std()-Z
-21. tBodyGyro-mean()-X
-22. tBodyGyro-mean()-Y
-23. tBodyGyro-mean()-Z
-24. tBodyGyro-std()-X
-25. tBodyGyro-std()-Y
-26. tBodyGyro-std()-Z
-27. tBodyGyroJerk-mean()-X
-28. tBodyGyroJerk-mean()-Y
-29. tBodyGyroJerk-mean()-Z
-30. tBodyGyroJerk-std()-X
-31. tBodyGyroJerk-std()-Y
-32. tBodyGyroJerk-std()-Z
-33. tBodyAccMag-mean()
-34. tBodyAccMag-std()
-35. tGravityAccMag-mean()
-36. tGravityAccMag-std()
-37. tBodyAccJerkMag-mean()
-38. tBodyAccJerkMag-std()
-39. tBodyGyroMag-mean()
-40. tBodyGyroMag-std()
-41. tBodyGyroJerkMag-mean()
-42. tBodyGyroJerkMag-std()
-43. fBodyAcc-mean()-X
-44. fBodyAcc-mean()-Y
-45. fBodyAcc-mean()-Z
-46. fBodyAcc-std()-X
-47. fBodyAcc-std()-Y
-48. fBodyAcc-std()-Z
-49. fBodyAcc-meanFreq()-X
-50. fBodyAcc-meanFreq()-Y
-51. fBodyAcc-meanFreq()-Z
-52. fBodyAccJerk-mean()-X
-53. fBodyAccJerk-mean()-Y
-54. fBodyAccJerk-mean()-Z
-55. fBodyAccJerk-std()-X
-56. fBodyAccJerk-std()-Y
-57. fBodyAccJerk-std()-Z
-58. fBodyAccJerk-meanFreq()-X
-59. fBodyAccJerk-meanFreq()-Y
-60. fBodyAccJerk-meanFreq()-Z
-61. fBodyGyro-mean()-X
-62. fBodyGyro-mean()-Y
-63. fBodyGyro-mean()-Z
-64. fBodyGyro-std()-X
-65. fBodyGyro-std()-Y
-66. fBodyGyro-std()-Z
-67. fBodyGyro-meanFreq()-X
-68. fBodyGyro-meanFreq()-Y
-69. fBodyGyro-meanFreq()-Z
-70. fBodyAccMag-mean()
-71. fBodyAccMag-std()
-72. fBodyAccMag-meanFreq()
-73. fBodyBodyAccJerkMag-mean()
-74. fBodyBodyAccJerkMag-std()
-75. fBodyBodyAccJerkMag-meanFreq()
-76. fBodyBodyGyroMag-mean()
-77. fBodyBodyGyroMag-std()
-78. fBodyBodyGyroMag-meanFreq()
-79. fBodyBodyGyroJerkMag-mean()
-80. fBodyBodyGyroJerkMag-std()
-81. fBodyBodyGyroJerkMag-meanFreq()
+1. subject : the ID of the test person
+2. activity : the name of the activity
+3. avg_tBodyAcc_mean_X : the average of the tBodyAcc-mean()-X variable in the original data set (idem for all subsequent variables)
+4. avg_tBodyAcc_mean_Y
+5. avg_tBodyAcc_mean_Z
+6. avg_tBodyAcc_std_X
+7. avg_tBodyAcc_std_Y
+8. avg_tBodyAcc_std_Z
+9. avg_tGravityAcc_mean_X
+10. avg_tGravityAcc_mean_Y
+11. avg_tGravityAcc_mean_Z
+12. avg_tGravityAcc_std_X
+13. avg_tGravityAcc_std_Y
+14. avg_tGravityAcc_std_Z
+15. avg_tBodyAccJerk_mean_X
+16. avg_tBodyAccJerk_mean_Y
+17. avg_tBodyAccJerk_mean_Z
+18. avg_tBodyAccJerk_std_X
+19. avg_tBodyAccJerk_std_Y
+20. avg_tBodyAccJerk_std_Z
+21. avg_tBodyGyro_mean_X
+22. avg_tBodyGyro_mean_Y
+23. avg_tBodyGyro_mean_Z
+24. avg_tBodyGyro_std_X
+25. avg_tBodyGyro_std_Y
+26. avg_tBodyGyro_std_Z
+27. avg_tBodyGyroJerk_mean_X
+28. avg_tBodyGyroJerk_mean_Y
+29. avg_tBodyGyroJerk_mean_Z
+30. avg_tBodyGyroJerk_std_X
+31. avg_tBodyGyroJerk_std_Y
+32. avg_tBodyGyroJerk_std_Z
+33. avg_tBodyAccMag_mean
+34. avg_tBodyAccMag_std
+35. avg_tGravityAccMag_mean
+36. avg_tGravityAccMag_std
+37. avg_tBodyAccJerkMag_mean
+38. avg_tBodyAccJerkMag_std
+39. avg_tBodyGyroMag_mean
+40. avg_tBodyGyroMag_std
+41. avg_tBodyGyroJerkMag_mean
+42. avg_tBodyGyroJerkMag_std
+43. avg_fBodyAcc_mean_X
+44. avg_fBodyAcc_mean_Y
+45. avg_fBodyAcc_mean_Z
+46. avg_fBodyAcc_std_X
+47. avg_fBodyAcc_std_Y
+48. avg_fBodyAcc_std_Z
+49. avg_fBodyAccJerk_mean_X
+50. avg_fBodyAccJerk_mean_Y
+51. avg_fBodyAccJerk_mean_Z
+52. avg_fBodyAccJerk_std_X
+53. avg_fBodyAccJerk_std_Y
+54. avg_fBodyAccJerk_std_Z
+55. avg_fBodyGyro_mean_X
+56. avg_fBodyGyro_mean_Y
+57. avg_fBodyGyro_mean_Z
+58. avg_fBodyGyro_std_X
+59. avg_fBodyGyro_std_Y
+60. avg_fBodyGyro_std_Z
+61. avg_fBodyAccMag_mean
+62. avg_fBodyAccMag_std
+63. avg_fBodyBodyAccJerkMag_mean
+64. avg_fBodyBodyAccJerkMag_std
+65. avg_fBodyBodyGyroMag_mean
+66. avg_fBodyBodyGyroMag_std
+67. avg_fBodyBodyGyroJerkMag_mean
+68. avg_fBodyBodyGyroJerkMag_std

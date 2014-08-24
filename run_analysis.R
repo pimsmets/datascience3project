@@ -20,24 +20,28 @@ activityLabels <- activityLabels[,2]
 features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors=FALSE)
 features <- features[,2]
 
-# 2. Label the data, and keep only "mean" and "std" features
-names(data) <- features
-featuresToKeep <- grepl("mean()", features) | grepl("std()", features)
+# 2. Label the data, and keep only "mean()" and "std()" features
+featuresToKeep <- grepl("mean\\(\\)", features) | grepl("std\\(\\)", features)
 data <- data[,featuresToKeep]
+features <- features[featuresToKeep]
 
-# 3. Set the activity labels
+# 3. Clean up the feature names and set the column names
+features <- lapply(features, function(x) { x <- gsub("-", "_", x); x <- gsub("\\(\\)", "", x); paste("avg", x, sep="_")})
+names(data) <- features
+
+# 4. Set the activity labels
 activities <- lapply(activities, function(x) activityLabels[x])
 
-# 4. Add subjects and activities to the data
+# 5. Add subjects and activities to the data
 #    and label the 2 new columns
 data <- cbind(subjects, activities, data)
 names(data)[1:2] = c("subject", "activity")
 
-# 5. Average per subject&activity
+# 6. Average per subject&activity
 data <- data.table(data)
 setkey(data, subject, activity)
 tidy <- data[, lapply(.SD, mean), by=list(data$subject, data$activity)]
 setnames(tidy, c(1,2), c("subject", "activity"))
 
-#6. Write to file
+# 7. Write to file
 write.table(tidy, file="result.txt", row.name=FALSE)
